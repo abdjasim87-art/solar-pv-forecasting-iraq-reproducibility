@@ -1,0 +1,23 @@
+SOLAR OFFICIAL RESULTS — COMPACT SOURCE OF TRUTH
+Version: v1 | Built: 2026-09-05
+
+STATUS
+Solar numerical/result validation is complete for the adopted thesis methodology. No currently reported Chapter Four Solar result needs numerical revision based on the validated packages.
+
+HOW TO USE
+- Use Solar_Official_Pooled_Metrics.csv for pooled descriptive model results.
+- Use Solar_Official_Direct_Energy.csv for the Chapter-Four direct cumulative-energy results.
+- Use Solar_Official_Global_Location_Daylight_RMSE.csv for representative-location global LSTM vs PatchTST daylight RMSE comparisons.
+- Use Solar_Official_Daylight_Statistical_Comparisons.csv for inferential claims.
+- Use Solar_Official_Protocol_and_Provenance.txt for protocol boundaries, exclusions, and provenance cautions.
+- If a disputed number arises, return to the selected original authoritative output listed in Solar_Official_Source_Manifest.csv.
+
+CORE INTERPRETIVE BOUNDARIES
+- The global LSTM vs official PatchTST comparison is a forecasting-system comparison under different predictor representations, not a controlled architecture-only ablation.
+- Global TCN is auxiliary, H24 only, seed 1; it must not replace the fully repeated two-horizon ranking.
+- LOCO cold-start and history-aware modes must remain distinct.
+- Few-shot adaptation results do not support a general improvement over cold-start zero-shot under the adopted head-only protocol.
+- Energy-bias ordering is not the same as hourly-RMSE ordering.
+
+EXCLUSIONS
+Do not reintroduce superseded TCN legacy metrics, the old baseline v1 script, older failed audit attempts, direct-statistics v1.0, debug/cache artifacts, or experiments excluded from the thesis methodology.

@@ -1,0 +1,42 @@
+SOLAR OFFICIAL RESULTS — PROTOCOL & PROVENANCE NOTE
+Package version: v1
+Built: 2026-09-05
+Status: Solar result validation complete for the currently adopted thesis methodology.
+
+PURPOSE
+This file is a compact navigation/provenance source for Chapter Five. It does not replace the original authoritative output files. The selected original outputs are preserved in 02_ORIGINAL_AUTHORITATIVE_RESULTS and their SHA-256 hashes are listed in Solar_Official_Source_Manifest.csv.
+
+ADOPTED SOLAR RESULT BRANCHES INCLUDED
+1. Deterministic baselines: historical climatology and daily persistence at H24/H48.
+2. Direct LSTM: global and location-specific, H24/H48, seeds 1-3.
+3. Direct official PatchTST: global and location-specific, H24/H48, seeds 1-3, S-mode, selected lookback 168 h.
+4. Auxiliary global TCN: H24 only, seed 1, strict common-case recheck only.
+5. LOCO LSTM zero-shot: history-aware and cold-start, H24/H48, seeds 1-3.
+6. LOCO LSTM few-shot: cold-start source model with head-only adaptation at 30/90/365 target-label days.
+7. LOCO official PatchTST: history-aware zero-shot, H24/H48, seeds 1-3.
+8. Dependence-aware paired statistics for direct and LOCO comparisons.
+
+KEY PROTOCOL INVARIANTS
+- Common direct/LOCO test evaluation uses the adopted 2024-2025 test period and a common 168 h eligibility warm-up.
+- H24 direct test residuals: 6,186,600; daylight cases: 3,103,207.
+- H48 direct test residuals: 12,355,920; daylight cases: 6,199,242.
+- Repeated neural systems retain seeds 1, 2, and 3 and report sample SD with ddof=1.
+- Direct LSTM uses the multivariate leakage-controlled predictor representation; official PatchTST uses S-mode with strictly past normalized PV alone. LSTM-vs-PatchTST comparisons are therefore end-to-end forecasting-system comparisons, not pure same-input architecture ablations.
+- PatchTST official repository commit: 204c21efe0b39603ad6e2ca640ef5896646ab1a9.
+- Direct PatchTST pre-test selection locks confirm selection_used_test=false and L168 for all retained global/location-specific H24/H48 configurations.
+- LOCO cold-start excludes target-derived PV-history predictors. LOCO history-aware may use strictly past target-site PV history at inference while excluding the target site from source fitting.
+- Few-shot adaptation is head-only; the recurrent backbone, source scalers, and source validation correction remain frozen.
+- Statistical support requires BOTH a confidence interval excluding zero AND Holm-adjusted p < 0.05. Direct effect sign is PatchTST - LSTM; positive values favor LSTM.
+
+AUTHORITATIVE / SUPERSEDED RULES
+- Use strict TCN H24 result only: RMSE 0.0562768123 and daylight RMSE 0.0794602881. Legacy TCN metrics (RMSE 0.0564946324; daylight RMSE 0.0798191912) are superseded and excluded.
+- The baseline package's v1 shell script is excluded because the v2 outputs are authoritative and the old script had the H48 origin-end assumption fixed later.
+- The older failed LOCO raw-audit attempt is not selected; the later PASS audit supersedes it.
+- Direct statistics v1.0 is superseded by v1.1; v1.1 corrected timestamp representation for exact pairing without retraining or changing predictions/targets.
+- __pycache__, debug outputs, duplicate packed archives, and raw prediction arrays are not promoted to Project Sources.
+
+DOCUMENTATION NOTE TO RESOLVE ONCE, NOT DURING RESULT WRITING
+The RunPod container tag records PyTorch 2.4.0, while the validated LSTM/PatchTST runtime evidence reports torch 2.4.1+cu124. This is a documentation/version-label issue, not a numerical-result issue. Keep it as a single cross-chapter environment correction item; do not change experimental results because of it.
+
+PATCHTST LOCO RAW-EVIDENCE LIMIT
+The supplied PatchTST LOCO result RAR contains final test summaries, seed results, freeze/audit records, and paired-statistics outputs. It does not contain the raw NPZ prediction arrays themselves. The numerical outputs and frozen provenance are authoritative, but raw-array recomputation is not possible from that RAR alone.

@@ -1,0 +1,7 @@
+component	source_origin	creation_provenance	execution_provenance	role	status
+direct_lstm	Original project code supplied by authors	Author project/original code	Authors/original archived runs	Retained direct LSTM experiments	CONFIRMED
+direct_patchtst	Official PatchTST upstream + local project wrapper/configuration	Upstream PatchTST authors + author workflow	Authors/original archived runs	Retained direct official PatchTST experiments	VERIFIED_WRAPPER_WEIGHTS_PREDICTIONS_SELECTION
+tcn_h24_seed1	Original project code and archived output	Author project/original code	Authors/original archived run	Auxiliary H24 sensitivity experiment	CONFIRMED_OUTPUT_CODE; RETAINED_CHECKPOINT_VERIFIED
+loco_lstm_patchtst	Project transfer archives	Author project/original workflow	Authors/original archived runs	LOCO zero-shot/few-shot and paired analyses	TL01_TL05_VERIFIED_FINAL_ARCHIVES
+smart_persistence_v2	Reviewer-response supplementary baseline	Drafted with AI assistance; reviewed/adopted by authors	Executed by authors on study environment	Clear-sky-index persistence baseline added during revision	CONFIRMED
+bias_offsets_audit	Extraction/audit from archived correction.json	AI-assisted extraction script	Executed during revision audit; no training/inference	Reviewer-response reproducibility audit only	CONFIRMED

@@ -1,0 +1,54 @@
+group,predictor,direct_and_history_aware,cold_start_loco
+Temporal/seasonal,hour_sin,retained,retained
+Temporal/seasonal,hour_cos,retained,retained
+Temporal/seasonal,month_sin,retained,retained
+Temporal/seasonal,month_cos,retained,retained
+Temporal/seasonal,dayofyear_sin,retained,retained
+Temporal/seasonal,dayofyear_cos,retained,retained
+Temporal/seasonal,weekofyear_sin,retained,retained
+Temporal/seasonal,weekofyear_cos,retained,retained
+Temporal/seasonal,season_Winter,retained,retained
+Temporal/seasonal,season_Spring,retained,retained
+Temporal/seasonal,season_Summer,retained,retained
+Temporal/seasonal,season_Autumn,retained,retained
+Temporal/seasonal,is_daylight,retained,retained
+Weather/radiation,temperature_2m_c,retained,retained
+Weather/radiation,dew_point_2m_c,retained,retained
+Weather/radiation,relative_humidity_2m_pct,retained,retained
+Weather/radiation,surface_pressure_kpa,retained,retained
+Weather/radiation,precipitation_mm_per_hour,retained,retained
+Weather/radiation,cloud_cover_pct,retained,retained
+Weather/radiation,shortwave_radiation_ghi_wm2,retained,retained
+Weather/radiation,direct_normal_irradiance_dni_wm2,retained,retained
+Weather/radiation,diffuse_radiation_dhi_wm2,retained,retained
+Weather/radiation,clear_sky_ghi_wm2,retained,retained
+Weather/radiation,all_sky_clearness_index,retained,retained
+Solar geometry,solar_zenith_deg,retained,retained
+Solar geometry,solar_elevation_deg,retained,retained
+Solar geometry,solar_azimuth_deg,retained,retained
+Solar geometry,solar_cos_aoi,retained,retained
+Static location/PV surface,city_latitude_deg,retained,retained
+Static location/PV surface,city_longitude_deg,retained,retained
+Static location/PV surface,solar_latitude_deg,retained,retained
+Static location/PV surface,solar_longitude_deg,retained,retained
+Static location/PV surface,pv_tilt_deg,retained,retained
+Static location/PV surface,pv_azimuth_deg,retained,retained
+Past PV history,solar_lag1,retained,removed
+Past PV history,solar_lag2,retained,removed
+Past PV history,solar_lag3,retained,removed
+Past PV history,solar_lag6,retained,removed
+Past PV history,solar_lag12,retained,removed
+Past PV history,solar_lag24,retained,removed
+Past PV history,solar_lag48,retained,removed
+Past PV history,solar_lag168,retained,removed
+Past PV history,solar_roll3_mean,retained,removed
+Past PV history,solar_roll6_mean,retained,removed
+Past PV history,solar_roll12_mean,retained,removed
+Past PV history,solar_roll24_mean,retained,removed
+Past PV history,solar_roll3_std,retained,removed
+Past PV history,solar_roll6_std,retained,removed
+Past PV history,solar_roll12_std,retained,removed
+Past PV history,solar_delta1,retained,removed
+Past PV history,solar_delta2,retained,removed
+Past PV history,solar_delta3,retained,removed
+Past PV history,solar_daylight_lag1,retained,removed

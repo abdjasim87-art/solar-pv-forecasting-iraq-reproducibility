@@ -1,0 +1,230 @@
+{
+  "status": "VALIDATION_ONLY_SELECTION",
+  "selection_used_test": false,
+  "test_data_loaded": false,
+  "command": "select-location-specific",
+  "train_period": "2015-2021",
+  "validation_period": "2022-2023",
+  "test_period": "2024-2025 (inaccessible during selection)",
+  "horizon": 24,
+  "candidate_lookbacks": [
+    24,
+    48,
+    72,
+    168
+  ],
+  "common_validation_warmup": 168,
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "seed_policy": "retain all 3 seeds; no seed cherry-picking",
+  "sample_sd_ddof": 1,
+  "selection_metric": "mean corrected daylight RMSE across seeds",
+  "input_mode": "S",
+  "input_channel": "strictly past normalized PV target",
+  "original_architecture_imported_unmodified": true,
+  "official_pinned_commit": "204c21efe0b39603ad6e2ca640ef5896646ab1a9",
+  "strict_53_feature_policy_constructed_for_alignment_only": true,
+  "strict_feature_count": 53,
+  "strict_feature_cols": [
+    "hour_sin",
+    "hour_cos",
+    "month_sin",
+    "month_cos",
+    "dayofyear_sin",
+    "dayofyear_cos",
+    "weekofyear_sin",
+    "weekofyear_cos",
+    "season_Winter",
+    "season_Spring",
+    "season_Summer",
+    "season_Autumn",
+    "is_daylight",
+    "temperature_2m_c",
+    "dew_point_2m_c",
+    "relative_humidity_2m_pct",
+    "surface_pressure_kpa",
+    "precipitation_mm_per_hour",
+    "cloud_cover_pct",
+    "shortwave_radiation_ghi_wm2",
+    "direct_normal_irradiance_dni_wm2",
+    "diffuse_radiation_dhi_wm2",
+    "clear_sky_ghi_wm2",
+    "all_sky_clearness_index",
+    "solar_zenith_deg",
+    "solar_elevation_deg",
+    "solar_azimuth_deg",
+    "solar_cos_aoi",
+    "city_latitude_deg",
+    "city_longitude_deg",
+    "solar_latitude_deg",
+    "solar_longitude_deg",
+    "pv_tilt_deg",
+    "pv_azimuth_deg",
+    "solar_lag1",
+    "solar_lag2",
+    "solar_lag3",
+    "solar_lag6",
+    "solar_lag12",
+    "solar_lag24",
+    "solar_lag48",
+    "solar_lag168",
+    "solar_roll3_mean",
+    "solar_roll6_mean",
+    "solar_roll12_mean",
+    "solar_roll24_mean",
+    "solar_roll3_std",
+    "solar_roll6_std",
+    "solar_roll12_std",
+    "solar_delta1",
+    "solar_delta2",
+    "solar_delta3",
+    "solar_daylight_lag1"
+  ],
+  "target_col": "target_solar_power_kw_per_kwp",
+  "scaler_policy": "per_location_training_target",
+  "global_training_target_scaler_audit": {
+    "mean": 0.19998821154372326,
+    "scale": 0.26736677678706705
+  },
+  "corrections": [
+    "none",
+    "global_bias",
+    "daylight_bias",
+    "horizon_bias",
+    "horizon_daylight_bias"
+  ],
+  "postprocess": {
+    "night_zero": true,
+    "nonnegative": true,
+    "max_kw_per_kwp": 1.2
+  },
+  "reference_capacity_kwp_per_city": 3370.0,
+  "official_model_preflight": {
+    "status": "PASS",
+    "architecture_reimplemented": false,
+    "official_model_imported_unmodified": true,
+    "official_repo": {
+      "repo": "/workspace/lstm/vendor/PatchTST_official",
+      "commit": "204c21efe0b39603ad6e2ca640ef5896646ab1a9",
+      "tracked_worktree_clean": true,
+      "model_source": "/workspace/lstm/vendor/PatchTST_official/PatchTST_supervised/models/PatchTST.py",
+      "backbone_class_source": "/workspace/lstm/vendor/PatchTST_official/PatchTST_supervised/layers/PatchTST_backbone.py",
+      "encoder_class_source": "/workspace/lstm/vendor/PatchTST_official/PatchTST_supervised/layers/PatchTST_backbone.py",
+      "model_source_sha256": "49d8bb865e1226d6338842f4b33c4bc6992cefb048dc2a4a5a8c410ca708586b",
+      "backbone_source_sha256": "df67173153787c2356bdfb6491159cd754332ef7382986efe879e1fbea8ebf26",
+      "layers_source_sha256": "21c06c70a90c60ee2a269b5c600c702834dea22cdfd72915e6b0f8b4a28db3f6",
+      "revin_source_sha256": "e64c0ccded9228b347134e7368420d3fb10f70c75145b5ff2d8bdd8c3af59df6"
+    },
+    "pinned_commit": "204c21efe0b39603ad6e2ca640ef5896646ab1a9",
+    "input_mode": "S",
+    "input_channels": 1,
+    "input_channel": "past normalized AC PV target",
+    "channel_independence_preserved": true,
+    "horizons": [
+      24,
+      48
+    ],
+    "lookbacks_for_each_horizon": [
+      24,
+      48,
+      72,
+      168
+    ],
+    "common_max_lookback": 168,
+    "architecture": {
+      "patch_len": 16,
+      "stride": 8,
+      "padding_patch": "end",
+      "revin": 1,
+      "affine": 0,
+      "subtract_last": 0,
+      "decomposition": 0,
+      "individual": 0,
+      "d_model": 128,
+      "n_heads": 16,
+      "e_layers": 3,
+      "d_ff": 256,
+      "dropout": 0.2,
+      "fc_dropout": 0.2,
+      "head_dropout": 0.0
+    },
+    "training": {
+      "optimizer": "Adam",
+      "learning_rate": 0.0001,
+      "criterion": "MSE",
+      "batch_size": 128,
+      "epochs": 100,
+      "patience": 20,
+      "lr_adjustment": "official type3"
+    },
+    "shape_checks": {
+      "L24_H24": [
+        2,
+        24,
+        1
+      ],
+      "L48_H24": [
+        2,
+        24,
+        1
+      ],
+      "L72_H24": [
+        2,
+        24,
+        1
+      ],
+      "L168_H24": [
+        2,
+        24,
+        1
+      ],
+      "L24_H48": [
+        2,
+        48,
+        1
+      ],
+      "L48_H48": [
+        2,
+        48,
+        1
+      ],
+      "L72_H48": [
+        2,
+        48,
+        1
+      ],
+      "L168_H48": [
+        2,
+        48,
+        1
+      ]
+    },
+    "parameter_counts": {
+      "L24_H24": 409240,
+      "L48_H24": 418840,
+      "L72_H24": 428440,
+      "L168_H24": 466840,
+      "L24_H48": 418480,
+      "L48_H48": 437296,
+      "L72_H48": 456112,
+      "L168_H48": 531376
+    },
+    "base_lstm_code": "/workspace/lstm/solar_lstm_pv_per_kwp_v3.py",
+    "base_lstm_code_sha256": "41f7892cbdd296f6ea4d6887a5dd92669cd3a1a42ef0fb4695c29e7d79369438",
+    "python": "3.11.10 (main, Sep  7 2024, 18:35:41) [GCC 11.4.0]",
+    "torch": "2.4.1+cu124",
+    "cuda_available": true,
+    "cuda_version": "12.4",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "platform": "Linux-6.8.0-85-generic-x86_64-with-glibc2.35"
+  },
+  "protocol_code_sha256": "769f9949eff6c4556e42bb5e19066f0732f80b123c5e4ef9ecd5163e971189ec",
+  "base_code_sha256": "41f7892cbdd296f6ea4d6887a5dd92669cd3a1a42ef0fb4695c29e7d79369438",
+  "data_sha256": {
+    "train": "bd9fce556216c806ce812f05d0556ad84f9ccc3453f7f430e99df9013d73db06",
+    "valid": "86f95e8581b864e2cc6d67640bbcd802fdf7176716b5119aa721d1a64369ca5a"
+  }
+}

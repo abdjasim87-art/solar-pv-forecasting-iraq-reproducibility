@@ -1,0 +1,30 @@
+ORIGINAL PATCHTST — VALIDATION-ONLY SELECTION
+============================================================================================
+Scope command: select-location-specific
+Horizon: H48
+Lookbacks compared: [24, 48, 72, 168]
+Seeds retained: [1, 2, 3]
+Common Validation warm-up: 168 h
+Test loaded: NO
+Architecture reimplemented: NO
+Official pinned commit: 204c21efe0b39603ad6e2ca640ef5896646ab1a9
+Original input mode: S (strictly past normalized PV target)
+Patch/stride: fixed 16/8
+Configuration ranking: mean Validation daylight RMSE over seeds 1,2,3
+
+SELECTED CONFIGURATIONS
+Anbar: L168 | Validation daylight RMSE mean=0.096984607
+Babylon: L168 | Validation daylight RMSE mean=0.089146999
+Baghdad: L168 | Validation daylight RMSE mean=0.092866142
+Basra: L168 | Validation daylight RMSE mean=0.092440541
+Dhi_Qar: L168 | Validation daylight RMSE mean=0.089438746
+Diyala: L168 | Validation daylight RMSE mean=0.092995657
+Karbala: L168 | Validation daylight RMSE mean=0.085210700
+Kirkuk: L168 | Validation daylight RMSE mean=0.114458316
+Maysan: L168 | Validation daylight RMSE mean=0.102261506
+Muthanna: L168 | Validation daylight RMSE mean=0.089906412
+Najaf: L168 | Validation daylight RMSE mean=0.082250535
+Nineveh: L168 | Validation daylight RMSE mean=0.099884469
+Qadisiyyah: L168 | Validation daylight RMSE mean=0.081902500
+Salah_al_Din: L168 | Validation daylight RMSE mean=0.100700199
+Wasit: L168 | Validation daylight RMSE mean=0.094789193
