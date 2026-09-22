@@ -1,0 +1,8 @@
+{
+  "00_A10_H24_smoke.sh": "22279d26ca6b69683eee7cd37ac2389d5cd6d81814ba5b07c310ac7be2d5d404",
+  "10_H24_selection_refit.sh": "3c25d69f968f87bb266e653d65e4c0e6fac08bbf27a03fa22cae6cacafe0a5ca",
+  "FEWSHOT_PROTOCOL_LOCK_FINAL_v1_1.json": "6558a8034efacdbae3b3b4a6002bf7108d9605e89f25bbe661380f1ad07dd351",
+  "README.txt": "2a70168e677289954f652e498e4ec7ea733cea741eb2f77a1f543c2efa6bcad2",
+  "fewshot_A10_H24_selection_refit.py": "6282dc45a78d3c30592069a114fd0ba326032e6bd279428cc473301f1c5ad828",
+  "pack_A10_audit.py": "e6a1bec9a7978ef739e4561c748bfc702cc8eb89e42cafbbc62075a6f29c79df"
+}

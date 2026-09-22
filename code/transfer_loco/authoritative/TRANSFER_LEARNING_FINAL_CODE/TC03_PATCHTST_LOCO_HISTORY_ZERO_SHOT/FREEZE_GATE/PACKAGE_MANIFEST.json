@@ -1,0 +1,35 @@
+{
+  "package": "patchtst_loco_freeze_gate_v1",
+  "files": [
+    {
+      "name": "25_selection_freeze.sh",
+      "bytes": 725,
+      "sha256": "b1e22cdee8c94f70e1c255ddaffa72b0650037c8a6fd457c641260943bddb706"
+    },
+    {
+      "name": "30_H24_test_frozen.sh",
+      "bytes": 284,
+      "sha256": "494b6647a4c9b1d458f8215de19244a28f6cc090b9c0703272ce9cf48e037aa9"
+    },
+    {
+      "name": "40_H48_test_frozen.sh",
+      "bytes": 284,
+      "sha256": "03067ab25e992a2bf2589cb80dca6b8a09985500dee3a0e7c8b73dcefa8f6cf8"
+    },
+    {
+      "name": "README.txt",
+      "bytes": 464,
+      "sha256": "7689b8772d554f2b33f5170dc0b0cc03eb60d2de078c9604ae8c2e41fe1f1670"
+    },
+    {
+      "name": "freeze_selection.py",
+      "bytes": 9750,
+      "sha256": "9d5503926eaa47a17cb6504a3f80005f60db286c0f24e2dbab2c4a323cac6fe7"
+    },
+    {
+      "name": "verify_selection_freeze.py",
+      "bytes": 1828,
+      "sha256": "faa9b2fcec68897f672c7e7232c0496a595581468b384a9271f4298e076b8a17"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "00_A20_H48_smoke.sh": "2659ffba4d39f262e4102c90257a65fd5033eff72ee46e3e4f8e8244c40258d2",
+  "20_H48_selection_refit.sh": "b03586be1f0d9d4e574e3a43e1bcb8470caabf56b0ecbdf297c61f7289614e2a",
+  "FEWSHOT_PROTOCOL_LOCK_FINAL_v1_1.json": "6558a8034efacdbae3b3b4a6002bf7108d9605e89f25bbe661380f1ad07dd351",
+  "README.txt": "26bffa38ceddb034912910dddbdae1bb3180534bc47fe3830e955ac29fd47de8",
+  "fewshot_A20_H48_selection_refit.py": "b47f8872dcae16e867b447e55f1cd9fd33d75a6b98cd8d5093f38f995afe5149",
+  "pack_A20_audit.py": "d40c373d2883de3935656a093d6b6f783b6c87f60fa3fd8667b53de71cd69738"
+}

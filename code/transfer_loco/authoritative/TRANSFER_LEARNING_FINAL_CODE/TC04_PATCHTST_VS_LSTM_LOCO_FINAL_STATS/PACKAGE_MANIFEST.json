@@ -1,0 +1,45 @@
+{
+  "package": "patchtst_lstm_loco_paired_stats_v1_1",
+  "files": [
+    {
+      "name": "00_B00_freeze.sh",
+      "bytes": 569,
+      "sha256": "da4808120483b98b3e4455366527022c6d0030d41ecb36060b62aad72644a50a"
+    },
+    {
+      "name": "05_authorize_B10.sh",
+      "bytes": 481,
+      "sha256": "477a90f2b030b2d7050c8956f5f8b9ce6b66290936120d4b2d54d4520763959c"
+    },
+    {
+      "name": "10_B10_paired_stats.sh",
+      "bytes": 524,
+      "sha256": "df405f2eb333f4d7b92215dbd8c229a2c05d0d14c17c272f1820fa2ae3f30d5e"
+    },
+    {
+      "name": "PAIRED_STATS_PROTOCOL_v1.md",
+      "bytes": 2861,
+      "sha256": "274cda7e48051bf6d60ec9efabb0d3d9db866c75b7bbbfa025453461465b48bf"
+    },
+    {
+      "name": "README.txt",
+      "bytes": 483,
+      "sha256": "27f6832d5c1b24b3b7def6e7a1d5af17942e7859fa191711d950456b4979a012"
+    },
+    {
+      "name": "freeze_B00_v1.py",
+      "bytes": 6071,
+      "sha256": "1fdf51b85e24b62075a95cff0ccc0e603ac0c7691e70a5770d9e6eab6a739615"
+    },
+    {
+      "name": "pack_audit.py",
+      "bytes": 677,
+      "sha256": "abca2e145c0a72ae6b081b770d17de0c73fdb85be96addf8c5de31b4e7de7eae"
+    },
+    {
+      "name": "paired_stats_v1.py",
+      "bytes": 11750,
+      "sha256": "b1be7d7b6bc3394f7587836fcf3f1c98670384070f8acb3d4992a51151a08edb"
+    }
+  ]
+}

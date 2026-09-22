@@ -1,0 +1,192 @@
+{
+  "protocol_name": "LOCO Few-shot Adaptation Extension \u2014 Final Pre-Test Lock",
+  "version": "1.1",
+  "supersedes_preliminary_lock": "FEWSHOT_PROTOCOL_LOCK_PRETEST_v1.json",
+  "amendment_timing": "Finalized after structural A00 preflight and before any adaptation training or adapted Test inference.",
+  "amendments_from_preliminary_v1": [
+    "Forecast head is now bound exactly to state_dict parameters head.0.*, head.3.*, and head.6.*; all lstm.* parameters remain frozen.",
+    "Frozen LSTM backbone is kept in eval mode during adaptation so recurrent dropout is disabled; the MLP head is kept in train mode so head dropout remains active.",
+    "ReduceLROnPlateau is removed from adaptation. A fixed learning rate of 1e-4 is used in both selection and refit so the refit training trajectory is reproducible without reusing target validation.",
+    "Budget windows are enumerated from the full 2022-2023 cold-start validation frame and then filtered by complete target-horizon containment. The dataframe is not sliced to the budget before window construction.",
+    "Target-city adaptation-validation checkpoint monitoring uses the frozen source correction and the unchanged physical postprocessing; the correction itself is never reselected or refit on target-city labels."
+  ],
+  "scientific_scope": {
+    "purpose": "Estimate the value of recent target-city labeled PV-target history for adapting a frozen multi-city cold-start model to a previously unseen city.",
+    "starting_model": "Frozen H24/H48 cold-start source checkpoint for the same held-out city and seed.",
+    "track": "Cold-start only: 34 predictors and zero PV-target-history predictors at inference.",
+    "target_labels": "Normalized physics-based AC PV target used by the study; not metered plant production.",
+    "adaptation_source_period": "Target-city labels from 2023 only, physically stored in the original 2022-2023 validation file but unused by the source fold because the target city was held out.",
+    "independent_test": "Exactly the already frozen 2024-2025 Stage 60/80 grids.",
+    "test_seal": "No adapted Test inference before A10+A20 selection/refit and A30 adapted-checkpoint freeze are all PASS/CLOSED."
+  },
+  "data_binding": {
+    "validation_path": "/workspace/lstm/data2/valid.csv",
+    "validation_sha256": "86f95e8581b864e2cc6d67640bbcd802fdf7176716b5119aa721d1a64369ca5a",
+    "test_path_forbidden_during_selection": "/workspace/lstm/data2/test.csv",
+    "test_sha256_reference_only": "b0a3f938359eb1d5da615d0db5f34333b764217d2ce41454f5ff220b6ac9a222"
+  },
+  "model_binding": {
+    "lookback_hours": 24,
+    "hidden_size": 256,
+    "num_layers": 3,
+    "head_hidden": 128,
+    "trainable_parameter_prefixes": [
+      "head.0.",
+      "head.3.",
+      "head.6."
+    ],
+    "frozen_parameter_prefixes": [
+      "lstm."
+    ],
+    "expected_trainable_params": {
+      "H24": 42712,
+      "H48": 44272
+    },
+    "backbone_mode_during_adaptation": "eval",
+    "head_mode_during_adaptation": "train",
+    "city_embedding": false
+  },
+  "budgets_utc": {
+    "30d": {
+      "full": [
+        "2023-12-02T00:00:00Z",
+        "2023-12-31T23:00:00Z"
+      ],
+      "selection_train": [
+        "2023-12-02T00:00:00Z",
+        "2023-12-25T23:00:00Z"
+      ],
+      "selection_validation": [
+        "2023-12-26T00:00:00Z",
+        "2023-12-31T23:00:00Z"
+      ],
+      "days": [
+        30,
+        24,
+        6
+      ]
+    },
+    "90d": {
+      "full": [
+        "2023-10-03T00:00:00Z",
+        "2023-12-31T23:00:00Z"
+      ],
+      "selection_train": [
+        "2023-10-03T00:00:00Z",
+        "2023-12-13T23:00:00Z"
+      ],
+      "selection_validation": [
+        "2023-12-14T00:00:00Z",
+        "2023-12-31T23:00:00Z"
+      ],
+      "days": [
+        90,
+        72,
+        18
+      ]
+    },
+    "365d": {
+      "full": [
+        "2023-01-01T00:00:00Z",
+        "2023-12-31T23:00:00Z"
+      ],
+      "selection_train": [
+        "2023-01-01T00:00:00Z",
+        "2023-10-19T23:00:00Z"
+      ],
+      "selection_validation": [
+        "2023-10-20T00:00:00Z",
+        "2023-12-31T23:00:00Z"
+      ],
+      "days": [
+        365,
+        292,
+        73
+      ]
+    }
+  },
+  "expected_windows_per_city": {
+    "H24": {
+      "30d": {
+        "selection_train": 553,
+        "selection_validation": 121,
+        "full_refit": 697
+      },
+      "90d": {
+        "selection_train": 1705,
+        "selection_validation": 409,
+        "full_refit": 2137
+      },
+      "365d": {
+        "selection_train": 6985,
+        "selection_validation": 1729,
+        "full_refit": 8737
+      }
+    },
+    "H48": {
+      "30d": {
+        "selection_train": 529,
+        "selection_validation": 97,
+        "full_refit": 673
+      },
+      "90d": {
+        "selection_train": 1681,
+        "selection_validation": 385,
+        "full_refit": 2113
+      },
+      "365d": {
+        "selection_train": 6961,
+        "selection_validation": 1705,
+        "full_refit": 8713
+      }
+    }
+  },
+  "window_policy": {
+    "full_target_containment": true,
+    "predictor_history_may_precede_label_budget_start": true,
+    "budget_interpretation": "Budget counts local labeled target hours/days, not all local meteorological observations.",
+    "nested_recent_budgets": "30d subset of 90d subset of 365d, all ending 2023-12-31.",
+    "interpretive_caveat": "Budget size and seasonal coverage are intentionally linked in this deployment-style recent-history design; results quantify recent labeled-history budgets rather than a pure sample-size intervention."
+  },
+  "optimization": {
+    "optimizer": "AdamW",
+    "learning_rate": 0.0001,
+    "fixed_learning_rate": true,
+    "weight_decay": 0.0001,
+    "batch_size": 512,
+    "gradient_clip": 1.0,
+    "loss": "same strict weighted Huber as source model",
+    "daylight_weight": 4.0,
+    "night_weight": 0.25,
+    "production_weight": 1.0,
+    "max_selection_epochs": 30,
+    "early_stopping_monitor": "target-city adaptation-validation daylight RMSE after frozen source correction and unchanged postprocessing",
+    "early_stopping_patience": 5,
+    "early_stopping_min_delta": 1e-05,
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "refit": "Restore the original source checkpoint, reset the same seed, and train on the full budget for exactly best_epoch using the same fixed optimizer settings; do not consult target validation during refit."
+  },
+  "frozen_source_artifacts": {
+    "x_scaler": "one source-trained scaler per held-out fold/horizon; never refit on target city",
+    "y_scaler": "one source-trained scaler per held-out fold/horizon; never refit on target city",
+    "correction": "source-validation-selected per seed; frozen and retained; never recalibrated from target labels",
+    "postprocess": "night zero, nonnegative, cap 1.2 kW/kWp"
+  },
+  "run_plan": {
+    "selection_runs": 270,
+    "refit_checkpoints": 270,
+    "formula": "15 cities \u00d7 2 horizons \u00d7 3 budgets \u00d7 3 seeds",
+    "order": [
+      "A00b binding \u2014 no training/no Test",
+      "A10 H24 selection+refit \u2014 no Test",
+      "A20 H48 selection+refit \u2014 no Test",
+      "A30 freeze all 270 adapted checkpoints \u2014 no Test",
+      "A40/A50/A60 H24 Test 30/90/365",
+      "A70/A80/A90 H48 Test 30/90/365"
+    ]
+  }
+}

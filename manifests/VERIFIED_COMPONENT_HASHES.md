@@ -1,0 +1,13 @@
+# Verified component hashes
+
+- Direct local LSTM H24 selected archive (source package): 46133b494714b29e6ffcd0f476a4c667ada32ec3746b027b0b4a740eebe48be0
+- Direct local LSTM H48 selected archive (source package): fee4f014bf03506f27d157312eed1ceb112c8211d0929282ca09b37c095f7977
+- Retained Solar TCN checkpoint: 205b502113c1eef77d67fbf71e6ada0841e00b7ee7b498ab0b72b2687f71b516
+- Excluded Solar TCN smoke checkpoint: 45b3da36249192d87cbcc447dd37b941a5371b64f584f762031f87a2822a6ee7
+- Official PatchTST wrapper: 769f9949eff6c4556e42bb5e19066f0732f80b123c5e4ef9ecd5163e971189ec
+- Exact PatchTST base dependency: 41f7892cbdd296f6ea4d6887a5dd92669cd3a1a42ef0fb4695c29e7d79369438
+- TL01: 3786e464994e9bf87c114dc9c53560778bde22e477dde17ebbc4914ca726dd1d
+- TL02: 951a96cb246c2d11b29a753326171d3a56ff3e02b480f734b23712a600222504
+- TL03: d2aae13fd84b254874c5f32bda961df53f5c59170ab7c8d262b526f9dfe3a0a0
+- TL04: aedd758f3693e6e67a79f17ca31b2d218e646a5968f4ed4ca626d109e19bbe09
+- TL05: eee0c0262c5f6331cfc223747a253f65346205140dc3a2a0d7590d7bd15170f7

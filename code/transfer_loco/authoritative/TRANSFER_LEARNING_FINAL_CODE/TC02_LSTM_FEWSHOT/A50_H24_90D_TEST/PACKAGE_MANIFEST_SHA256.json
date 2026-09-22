@@ -1,0 +1,8 @@
+{
+  "50_H24_90d_test.sh": "33c017fabb4fd5bce8aa42e41de8eef593be42c14694fcb8a18420beddb0ecec",
+  "FEWSHOT_PROTOCOL_LOCK_FINAL_v1_1.json": "6558a8034efacdbae3b3b4a6002bf7108d9605e89f25bbe661380f1ad07dd351",
+  "README.txt": "08811798f695ed96473c19311a3fa7ae48a1564bc3671a2ab1ba1600185e8ca2",
+  "audit_A50_H24_90d_raw.py": "b916eec9f1e50e2cfcfd3b25169774211cbc62c821fc047f54d6d7337df05d43",
+  "fewshot_A50_H24_90d_test.py": "49e4cf633728c410c65a7bdd6b350d45929be927acb253cba612abed6b77a99f",
+  "pack_A50_audit.py": "936ad15111d870d2a0ae867cc8367a8180ee742cce201b468224cab838f7c6f5"
+}

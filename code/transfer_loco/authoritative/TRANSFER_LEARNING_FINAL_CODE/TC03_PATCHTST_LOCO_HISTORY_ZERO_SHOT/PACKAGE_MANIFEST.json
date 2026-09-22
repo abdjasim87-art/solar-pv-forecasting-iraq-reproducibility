@@ -1,0 +1,58 @@
+{
+  "00_preflight.sh": {
+    "bytes": 1296,
+    "sha256": "4a54bf377db384ec924cb9800bddae077a306941cb9bde6b1b7c551c69080898"
+  },
+  "10_H24_selection.sh": {
+    "bytes": 917,
+    "sha256": "29efc7e6571e5fb5d096b9c3a20557f772bc8f9e1002d3b2ed8032e2eb18e170"
+  },
+  "20_H48_selection.sh": {
+    "bytes": 917,
+    "sha256": "155d46e57029f20f47e8a0e48f8eb04ad52a691453a09d71e8c04d9c9523898c"
+  },
+  "30_H24_test.sh": {
+    "bytes": 1107,
+    "sha256": "3c981dc2a3544c4d2beacef711b00ed543f00a94eb224a88105b0d30cefb9219"
+  },
+  "40_H48_test.sh": {
+    "bytes": 1107,
+    "sha256": "89b5ae8ea68162014a300964bd00303e43af5008af5e0968be5fc56734ee163f"
+  },
+  "PACKAGE_PROTOCOL_LOCK_v1.json": {
+    "bytes": 1376,
+    "sha256": "4580e14fb37ae3c4b5aefc330f532b9f24c86eca7b6f92ddece249c1760b0ea0"
+  },
+  "PATCHTST_LOCO_PROTOCOL_v1.md": {
+    "bytes": 6066,
+    "sha256": "d37d31fd40cea87ebe95a5b16d2af02741340ed6f0dce097a35902299acce106"
+  },
+  "README_START_AR.txt": {
+    "bytes": 1334,
+    "sha256": "5b40d78dd17e25b3525c68ce0bb04e330dbba4694a67c45d3162e7255eccbdfe"
+  },
+  "SOURCE_AUDITED_REFERENCE.json": {
+    "bytes": 1678,
+    "sha256": "94719de0303bced22c4c5f290293188f14ab4877518c4c22d063eef9b1fcd21d"
+  },
+  "pack_audit.py": {
+    "bytes": 1410,
+    "sha256": "2342d320ff04b8e86e182c795868e3bb77c6db5730c1a1a1c7cec822bc86cf36"
+  },
+  "solar_lstm_pv_per_kwp_v3.py": {
+    "bytes": 70173,
+    "sha256": "41f7892cbdd296f6ea4d6887a5dd92669cd3a1a42ef0fb4695c29e7d79369438"
+  },
+  "solar_patchtst_loco_protocol_v1.py": {
+    "bytes": 39107,
+    "sha256": "b31504f5bc19f0e45cae8ba75d5e90370b60ce102b776d6e266e42b78bad2f0c"
+  },
+  "solar_patchtst_original_protocol_reference.py": {
+    "bytes": 61955,
+    "sha256": "769f9949eff6c4556e42bb5e19066f0732f80b123c5e4ef9ecd5163e971189ec"
+  },
+  "verify_package.py": {
+    "bytes": 726,
+    "sha256": "b83266958d1920f17f1f249a7a3e638c123a9177547026f635c8243ea6c3aaa2"
+  }
+}

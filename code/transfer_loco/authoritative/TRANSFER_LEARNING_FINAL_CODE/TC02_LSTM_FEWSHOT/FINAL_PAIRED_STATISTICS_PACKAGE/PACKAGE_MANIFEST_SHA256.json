@@ -1,0 +1,10 @@
+{
+  "00_B00_freeze.sh": "16090960fe12488b092710509dfd627acf6f7c79e71ea54b3b8db147f09690c5",
+  "10_B10_paired_stats.sh": "6b782317bc36d3713bf3f0a3a04c9c746d927d440697617a836ccdd719ddb94c",
+  "FEWSHOT_PAIRED_STATS_PROTOCOL_LOCK_v1.json": "ea8c26beb49ad552a36ff2bfd5d88d46bddc0a839f05155a3a5ecef5d0a14a80",
+  "README.txt": "ee05a9570169a76a6233fe0729b51be0b4b391d4b2cc36560ebf02dd515f0230",
+  "freeze_fewshot_stats_B00_v1.py": "c27f1f0d9432946f56118ab101778d7aa17e2f46e8c448566fdbcced00e94319",
+  "pack_B00_audit.py": "c3a31de82f7a780d1d44a2ef1eaea2ab19c1f4b03251e417b74938f5b59832df",
+  "pack_B10_audit.py": "f2381a1a06e55e2aab487c7e59ad6238c3c3bdf85c1441df4be2b76ce746d29a",
+  "paired_fewshot_stats_v1.py": "9b852908443dc761929474d505979ba0064f9445095246cbed7feb7d7c0eaa62"
+}

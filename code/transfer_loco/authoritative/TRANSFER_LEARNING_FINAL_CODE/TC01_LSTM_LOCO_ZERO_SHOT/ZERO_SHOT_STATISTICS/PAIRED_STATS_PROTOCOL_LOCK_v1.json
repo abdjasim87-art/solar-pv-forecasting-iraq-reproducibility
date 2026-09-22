@@ -1,0 +1,73 @@
+{
+  "protocol_name": "LOCO Zero-shot Freeze and Paired Statistics v1",
+  "version": "1.0",
+  "frozen_after": "Stages 50/60/70/80 PASS/CLOSED",
+  "tracks": [
+    "history_aware",
+    "cold_start"
+  ],
+  "horizons": [
+    24,
+    48
+  ],
+  "cities": [
+    "Anbar",
+    "Babylon",
+    "Baghdad",
+    "Basra",
+    "Dhi_Qar",
+    "Diyala",
+    "Karbala",
+    "Kirkuk",
+    "Maysan",
+    "Muthanna",
+    "Najaf",
+    "Nineveh",
+    "Qadisiyyah",
+    "Salah_al_Din",
+    "Wasit"
+  ],
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "pairing_key": [
+    "city",
+    "forecast_origin",
+    "horizon_step"
+  ],
+  "deep_model_loss_handling": "Compute loss separately for each seed at each paired residual, then average loss across seeds; do not ensemble predictions.",
+  "primary_daylight": true,
+  "supplemental_all_hours": true,
+  "metrics": {
+    "RMSE": "squared loss; point estimate is sqrt(mean loss)",
+    "MAE": "absolute loss; point estimate is mean loss"
+  },
+  "bootstrap": {
+    "type": "circular moving-block bootstrap over UTC forecast-origin day",
+    "repetitions": 5000,
+    "block_days": 7,
+    "seed": 20260806,
+    "ci": 0.95,
+    "effect": "history_aware minus cold_start; negative favors history-aware"
+  },
+  "dm_style": {
+    "series": "UTC-day mean paired loss differential",
+    "hac": "Bartlett/Newey-West",
+    "hac_lag_days": 7,
+    "hln": true,
+    "h_days": {
+      "24": 1,
+      "48": 2
+    },
+    "two_sided": true
+  },
+  "multiplicity": {
+    "method": "Holm",
+    "pooled": "single test per horizon \u00d7 daytype \u00d7 metric; adjusted p equals raw p",
+    "city": "Holm across 15 city tests within horizon \u00d7 daytype \u00d7 metric"
+  },
+  "strong_support_rule": "Bootstrap 95% CI excludes zero AND Holm-adjusted p < 0.05.",
+  "adaptation": "Not part of this package. No 30/90/365-day adaptation is allowed before zero-shot statistics are frozen and audited."
+}

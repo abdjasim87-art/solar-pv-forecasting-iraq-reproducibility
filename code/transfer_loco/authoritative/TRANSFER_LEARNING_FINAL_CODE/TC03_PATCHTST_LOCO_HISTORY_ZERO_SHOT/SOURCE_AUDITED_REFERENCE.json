@@ -1,0 +1,27 @@
+{
+  "reference_name": "final audited original-architecture PatchTST re-execution supplied by user",
+  "source_package_uploaded_sha256": "da305fe26567a03449bb7d93ae277b91010564a3d65efdc8297ae7ca3f1f5cfa",
+  "reference_protocol_code_sha256": "769f9949eff6c4556e42bb5e19066f0732f80b123c5e4ef9ecd5163e971189ec",
+  "base_preprocessing_code_sha256": "41f7892cbdd296f6ea4d6887a5dd92669cd3a1a42ef0fb4695c29e7d79369438",
+  "official_patchtst_commit": "204c21efe0b39603ad6e2ca640ef5896646ab1a9",
+  "train_data_sha256": "bd9fce556216c806ce812f05d0556ad84f9ccc3453f7f430e99df9013d73db06",
+  "validation_data_sha256": "86f95e8581b864e2cc6d67640bbcd802fdf7176716b5119aa721d1a64369ca5a",
+  "test_data_sha256": "b0a3f938359eb1d5da615d0db5f34333b764217d2ce41454f5ff220b6ac9a222",
+  "input_mode": "S",
+  "input_channel": "strictly past normalized AC PV target",
+  "architecture_reimplemented": false,
+  "fixed_patch_len": 16,
+  "fixed_stride": 8,
+  "audited_final_global_H24_lookback_from_raw_npz": 168,
+  "audited_final_global_H48_lookback_from_raw_npz": 168,
+  "audited_raw_prediction_checks": {
+    "global_H24_archive_sha256": "f33d2a35c5a3c68b7ae3ac6649c2510598df60da871376d207563ff9e290fd6f",
+    "location_H24_archive_sha256": "cf66d26c666adb4ddb91ee2ce9db9d4ef8cd25b1a7ebec700ce6c1800df16898",
+    "global_H48_archive_sha256": "1bf2eccb100fb02f49a8b6a0af581c55b53a3c0ede69144e024f1024474a3a82",
+    "location_H48_archive_sha256": "c4f5ae435dbb3f51b2825a349b0498ef53e8dd2fa2c86b74a0125714a0a059b6",
+    "npz_files_checked": 96,
+    "all_final_npz_lookback_168": true,
+    "raw_metrics_recomputed_consistent": true,
+    "global_location_truth_grid_daylight_exact_match_H24_H48": true
+  }
+}

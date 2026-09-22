@@ -1,0 +1,18 @@
+# Large reproducibility artifacts are archived in Zenodo, not GitHub.
+trained_weights/
+predictions/
+transfer_packages/
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.npy
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# Full repository/deposit bundles
+*FINAL_preDOI*
+*Reproducibility_Repository*.tar.gz

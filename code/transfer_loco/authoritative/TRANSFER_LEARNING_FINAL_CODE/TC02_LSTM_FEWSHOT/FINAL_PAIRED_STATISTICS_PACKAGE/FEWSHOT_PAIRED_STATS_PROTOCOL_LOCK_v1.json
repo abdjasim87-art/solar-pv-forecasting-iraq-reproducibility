@@ -1,0 +1,97 @@
+{
+  "protocol_name": "LOCO Few-shot Adapted vs Cold-start Zero-shot Paired Statistics",
+  "version": "1.0",
+  "frozen_after": "A40/A50/A60 H24 and A70/A80/A90 H48 all PASS/CLOSED; before adapted-vs-zero inferential analysis",
+  "scientific_question": "Does few-shot head adaptation using recent target-city labeled PV history improve a previously unseen city's cold-start zero-shot forecast on the unchanged 2024-2025 independent Test grid?",
+  "comparison": "Each adapted budget is paired against the same frozen cold-start zero-shot model for the same held-out city, seed, forecast origin, and horizon step.",
+  "horizons": [
+    24,
+    48
+  ],
+  "budgets": [
+    "30d",
+    "90d",
+    "365d"
+  ],
+  "cities": [
+    "Anbar",
+    "Babylon",
+    "Baghdad",
+    "Basra",
+    "Dhi_Qar",
+    "Diyala",
+    "Karbala",
+    "Kirkuk",
+    "Maysan",
+    "Muthanna",
+    "Najaf",
+    "Nineveh",
+    "Qadisiyyah",
+    "Salah_al_Din",
+    "Wasit"
+  ],
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "pairing_key": [
+    "city",
+    "forecast_origin",
+    "horizon_step"
+  ],
+  "deep_model_loss_handling": "Compute squared and absolute loss separately for each seed at each paired residual, then average loss across seeds. Do not average predictions into an ensemble.",
+  "primary_daylight": true,
+  "supplemental_all_hours": true,
+  "metrics": {
+    "RMSE": "paired squared loss; point estimate is sqrt(mean seed-averaged squared loss)",
+    "MAE": "paired absolute loss; point estimate is mean seed-averaged absolute loss"
+  },
+  "effect_sign": "adapted minus cold-start zero-shot; negative favors adaptation",
+  "bootstrap": {
+    "type": "paired circular moving-block bootstrap over UTC forecast-origin day",
+    "repetitions": 5000,
+    "block_days": 7,
+    "seed_base": 20260806,
+    "ci": 0.95
+  },
+  "dm_style": {
+    "series": "UTC-day mean paired loss differential",
+    "hac": "Bartlett/Newey-West",
+    "hac_lag_days": 7,
+    "hln": true,
+    "h_days": {
+      "24": 1,
+      "48": 2
+    },
+    "two_sided": true
+  },
+  "multiplicity": {
+    "method": "Holm",
+    "pooled_family": "3 budgets within each horizon x daytype x metric",
+    "pooled_family_size": 3,
+    "city_family": "15 cities x 3 budgets within each horizon x daytype x metric",
+    "city_family_size": 45
+  },
+  "strong_support_rule": "Paired 95% bootstrap CI excludes zero AND Holm-adjusted p < 0.05.",
+  "cross_budget_policy": "No inferential test of 30d versus 90d versus 365d is run. Budget curves are descriptive because budget size and seasonal coverage are linked by the frozen recent-history design.",
+  "analysis_code_sha256": "9b852908443dc761929474d505979ba0064f9445095246cbed7feb7d7c0eaa62",
+  "test_sha256": "b0a3f938359eb1d5da615d0db5f34333b764217d2ce41454f5ff220b6ac9a222",
+  "source_locks": {
+    "zero_shot_freeze_report_sha256": "c7c05ee92e99658bd6e09208eeb4cc033cdada094c496a60f725a64878744966",
+    "zero_shot_freeze_manifest_sha256": "77ee276b3dd8e445410f1f5476b664355801f08bcc0b5b4fe0c5e7389d83bc13",
+    "zero_shot_manifest_digest_sha256": "6112890c1e2c3fc6cb0f1e3b6b44c67c71d4955ab1e84d167715624c5f843692",
+    "A30_protocol_sha256": "6558a8034efacdbae3b3b4a6002bf7108d9605e89f25bbe661380f1ad07dd351",
+    "A30_report_sha256": "facf216fc54e4a0e412101438982c7bd726636052b6b814e0cd728babccd0c31",
+    "A30_manifest_sha256": "487e343cb78a6781c50f7adf56da533466b0f19b2f02a71aa1cb39f0b869016c",
+    "A30_registry_sha256": "5208b17399cf974b6faaced9325e451da3699806e2129341c4fef9dc4f39b62f"
+  },
+  "adapted_stage_lock_sha256": {
+    "A40": "05214fd1cdec3197416b93a2292d48a7fac927c692f35deb64afa8888fd27e1f",
+    "A50": "848d63b43fe29f0c99c2afa79f83268870fa115b3228b188711a37188ee4ae82",
+    "A60": "008bee242615a10b9cbbb172bf10f2aa4a99069af6b67d66ea0d2b16d3636f4e",
+    "A70": "94886411c1786f796ff313b0041f9762d056bdbc893a959a4da2aab3be28d1b2",
+    "A80": "78de99432b7b37ed22ec872105588ac4f7b63319a14520f6f14ad4d0620a4794",
+    "A90": "ee0d31ca6757c4d31ead6fe1d8d09d44adda089bb0ef0a8bbcbfd77d3d792020"
+  }
+}

@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use these reproducibility materials, please cite the associated study and this archived repository release."
+title: "Multi-Horizon Solar Photovoltaic Power Forecasting at Representative Locations Across Iraq: Direct Evaluation and Cross-Location Transfer — Reproducibility Materials"
+type: software
+authors:
+  - family-names: "Mohamed"
+    given-names: "Abdulqader Jasim"
+    orcid: "https://orcid.org/0009-0003-4771-8300"
+  - family-names: "Saffer"
+    given-names: "Khalid Mohammed"
+    orcid: "https://orcid.org/0000-0001-8670-4161"
+version: "1.0.0"
+keywords:
+  - photovoltaic power forecasting
+  - LSTM
+  - PatchTST
+  - transfer learning
+  - cross-location generalization
+  - Iraq
+  - NASA POWER

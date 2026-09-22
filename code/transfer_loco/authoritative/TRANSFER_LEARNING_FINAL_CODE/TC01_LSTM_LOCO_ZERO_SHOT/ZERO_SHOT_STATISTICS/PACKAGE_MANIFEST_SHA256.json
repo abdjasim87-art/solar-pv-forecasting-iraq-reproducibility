@@ -1,0 +1,8 @@
+{
+  "README.txt": "d772e7bf806ff2c8a2751ec5e370dd006346f7a8e42744fd122919826a938967",
+  "10_paired_stats.sh": "66467d9639b0435303c0404ba9418ade7cdddfaadaa90feca5b42250cf4b7ec6",
+  "PAIRED_STATS_PROTOCOL_LOCK_v1.json": "39b0abea4c4d0eacd142ff9db31dff477e280ad4b535d6ac4a7ed6d5362a7208",
+  "freeze_zero_shot_loco_v1.py": "035539a2d43642dd0d0ec74bb275c70984f0590f0f46ede951e39485496053c6",
+  "paired_zero_shot_stats_v1.py": "3c625039b17b798f22c469834fc2feaf5840f179422367f06ef6c96d8ffb75f7",
+  "00_freeze_zero_shot.sh": "659ee3f92af200f6edc5626e2c707c67dda49bba716fb6e7ea2b358ecde26c2f"
+}
