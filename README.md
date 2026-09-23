@@ -32,7 +32,9 @@ packages are intentionally not stored in GitHub.
 
 The complete reproducibility deposit is archived separately in Zenodo.
 
-**Permanent Zenodo DOI: to be added after publication of the Zenodo record.**
+**Zenodo DOI (Version 1.0.0):** https://doi.org/10.5281/zenodo.22903000
+
+**Zenodo Concept DOI (all versions):** https://doi.org/10.5281/zenodo.22902999
 
 ## Interpretation boundary
 
